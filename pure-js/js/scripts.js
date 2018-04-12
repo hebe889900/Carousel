@@ -26,11 +26,23 @@ carousel.prototype.init = function() {
 
 
 carousel.prototype.renderDiv = function(text, id, class, parent_id) {
-    return text;
+    var newDiv = document.createElement("div");
+    var newContent = document.createTextNode(text);
+    newDiv.appendChild(newContent);
+    newDiv.id = id;
+    var currentDiv = document.getElementById(parent_id);
+    document.body.insertBefore(newDiv, currentDiv);
+    return newDiv;
 }
 
 carousel.prototype.renderButton = function(text, id, class, parent_id) {
-    return text;
+    var newButton = document.createElement("button");
+    var newContent = document.createTextNode(text);
+    newButton.appendChild(newContent);
+    newButton.id = id;
+    var currentDiv = document.getElementById(parent_id);
+    document.body.insertBefore(newButton, currentDiv);    
+    return newButton;
 }
 
 
